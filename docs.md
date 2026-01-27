@@ -64,10 +64,10 @@ front end—scanner and parser—of a transpiler looks like other compilers. 
 * when we say an implementation “is an **interpreter**”, we mean it takes in source code and executes it immediately. It runs programs “from source”.
 
 
----s
-# LANGUAGE
+---
+#### Scanning
 
-
+lexems -> the blobs resulted after lexing/scanning
 
 
 
