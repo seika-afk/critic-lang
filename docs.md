@@ -65,9 +65,36 @@ front end—scanner and parser—of a transpiler looks like other compilers. 
 
 
 ---
-#### Scanning
 
-lexems -> the blobs resulted after lexing/scanning
+- chunk defining [sequence of bytecode instruction]
+- defined common header-> providing types
+
+- memory allocation
+the best part ,
+
+GROW_CAPACITY
+GROW_ARRAY -> Go to macro->then to function
+
+- if new size < old size -> shrink
+- if new size =0 -> free allocation
+- new size larger then grow existing allocation , all this my simple lines of code:
+```c
+#include <stdlib.h>
+#include "memory.h"
+
+void* reallocate(void* pointer,size_t oldSize,size_t newSize){
+if(newSize==0){
+free(pointer);
+return NULL;
+
+}
+void * result=realloc(pointer, newSize);
+return result;
+
+}
+
+```
+
 
 
 
